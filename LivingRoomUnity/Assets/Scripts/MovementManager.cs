@@ -34,15 +34,11 @@ public class MovementManager : MonoBehaviour
             GetComponent<Transform>().position = GetComponent<Transform>().position + new Vector3(.1f, 0, 0);
         }
 
-
-        //Need to use time.deltaTime google
-        //Must rotate
-        //use at least 3 different methods
-        //try to find a way to rotate with mouse
     }*/
 
     //Method 1
 
+    /*
     Vector3 startPos_capsule;
     public Transform transform_capsule;
 
@@ -80,5 +76,75 @@ public class MovementManager : MonoBehaviour
         vRotate.y = Input.GetAxis("Rotate");
         Vector3 v = new Vector3(0.0f, vRotate.y, 0.0f) * Time.deltaTime * 15.0f;
         transform_capsule.Rotate(v, Space.Self);
+    }*/
+
+
+
+
+    //Method 2
+    /*
+    public Vector2 turn;
+    [SerializeField] private float speed = .1f;
+    [SerializeField] private Rigidbody rb;
+
+
+    private void Start()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
     }
+
+    private void Update()
+    {
+        turn.x += Input.GetAxis("Mouse X");
+        turn.y += Input.GetAxis("Mouse Y");
+        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+
+        var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        rb.velocity = dir * speed;
+
+
+
+    }*/
+
+    //Method 3
+    public float speed;
+    public float rotationSpeed;
+    public Vector2 turn;
+    [SerializeField] private Rigidbody rb;
+
+    void Start()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+    }
+    void Update()
+    {
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+        movementDirection.Normalize();
+
+        transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+
+        if (movementDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+        }
+        turn.x += Input.GetAxis("Mouse X");
+        turn.y += Input.GetAxis("Mouse Y");
+        transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+
+        var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        rb.velocity = dir * speed;
+
+    }
+
+
 }
+
+
+
