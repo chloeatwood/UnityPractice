@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\catwo\\UnityPractice\\LivingRoomUnity\\",
+  "WorkspaceRootPath": "U:\\UnityFolder\\UnityPractice\\LivingRoomUnity\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F4B43D43-FF50-E117-C598-2E838135E202}|Assembly-CSharp.csproj|c:\\users\\catwo\\unitypractice\\livingroomunity\\assets\\scripts\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F4B43D43-FF50-E117-C598-2E838135E202}|Assembly-CSharp.csproj|u:\\unityfolder\\unitypractice\\livingroomunity\\assets\\scripts\\eatq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4B43D43-FF50-E117-C598-2E838135E202}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\eatq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4B43D43-FF50-E117-C598-2E838135E202}|Assembly-CSharp.csproj|u:\\unityfolder\\unitypractice\\livingroomunity\\assets\\scripts\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4B43D43-FF50-E117-C598-2E838135E202}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,28 +18,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "eatq.cs",
+              "DocumentMoniker": "U:\\UnityFolder\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\eatq.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\eatq.cs",
+              "ToolTip": "U:\\UnityFolder\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\eatq.cs",
+              "RelativeToolTip": "Assets\\Scripts\\eatq.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T21:18:21.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "MovementManager.cs",
-              "DocumentMoniker": "C:\\Users\\catwo\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\MovementManager.cs",
+              "DocumentMoniker": "U:\\UnityFolder\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\MovementManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\MovementManager.cs",
-              "ToolTip": "C:\\Users\\catwo\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\MovementManager.cs",
+              "ToolTip": "U:\\UnityFolder\\UnityPractice\\LivingRoomUnity\\Assets\\Scripts\\MovementManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\MovementManager.cs",
-              "ViewState": "AQIAAFEAAAAAAAAAAAAYwC8AAAAFAAAA",
+              "ViewState": "AQIAAGwAAAAAAAAAAAAuwI8AAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-23T14:49:43.579Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

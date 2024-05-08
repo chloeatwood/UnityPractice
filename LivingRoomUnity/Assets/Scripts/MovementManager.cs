@@ -37,8 +37,8 @@ public class MovementManager : MonoBehaviour
     }*/
 
     //Method 1
-
     /*
+    
     Vector3 startPos_capsule;
     public Transform transform_capsule;
 
@@ -76,13 +76,14 @@ public class MovementManager : MonoBehaviour
         vRotate.y = Input.GetAxis("Rotate");
         Vector3 v = new Vector3(0.0f, vRotate.y, 0.0f) * Time.deltaTime * 15.0f;
         transform_capsule.Rotate(v, Space.Self);
-    }*/
+    }
 
 
 
 
     //Method 2
     /*
+    
     public Vector2 turn;
     [SerializeField] private float speed = .1f;
     [SerializeField] private Rigidbody rb;
@@ -108,9 +109,10 @@ public class MovementManager : MonoBehaviour
     }*/
 
     //Method 3
-    public float speed;
+    
+    [SerializeField] float speed;
     public float rotationSpeed;
-    public Vector2 turn;
+    [SerializeField] Vector2 turn;
     [SerializeField] private Rigidbody rb;
 
     void Start()
