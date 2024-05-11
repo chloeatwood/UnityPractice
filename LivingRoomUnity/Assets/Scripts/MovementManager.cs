@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -114,22 +115,36 @@ public class MovementManager : MonoBehaviour
     public float rotationSpeed;
     [SerializeField] Vector2 turn;
     [SerializeField] private Rigidbody rb;
+   [SerializeField] float jumpForce = 30;
+
+
 
     void Start()
     {
-
+     
     }
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
+
         Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
         movementDirection.Normalize();
         transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
 
 
+        // Making the player be able to jump
 
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        }
+
+ 
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         rb.velocity = dir * speed;
 
@@ -147,6 +162,8 @@ public class MovementManager : MonoBehaviour
             turn.x += Input.GetAxis("Mouse X");
             turn.y += Input.GetAxis("Mouse Y");
             transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+
+
         }
         else
         {
@@ -154,6 +171,8 @@ public class MovementManager : MonoBehaviour
         }
 
     }
+    
+
 
 
 }

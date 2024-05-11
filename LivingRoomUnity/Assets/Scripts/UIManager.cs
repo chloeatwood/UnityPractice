@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -16,8 +18,18 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void click()
+    //Function to reset the game round
+    public void resetGame()
     {
-        print("Clicked");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+    }
+
+
+    //Function to quit out of the application
+    public void exitGame()
+    {
+        Application.Quit();
+
     }
 }
