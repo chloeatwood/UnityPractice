@@ -110,72 +110,67 @@ public class MovementManager : MonoBehaviour
     }*/
 
     //Method 3
-    
-    [SerializeField] float speed;
-    public float rotationSpeed;
-    [SerializeField] Vector2 turn;
-    [SerializeField] private Rigidbody rb;
-   [SerializeField] float jumpForce = 30;
+      [SerializeField] float speed;
+      public float rotationSpeed;
+      [SerializeField] Vector2 turn;
+      [SerializeField] private Rigidbody rb;
+     [SerializeField] float jumpForce = 30;
 
 
 
-    void Start()
-    {
-     
-    }
-    void Update()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+      void Start()
+      {
+
+      }
+      void Update()
+      {
+          float horizontalInput = Input.GetAxis("Horizontal");
+          float verticalInput = Input.GetAxis("Vertical");
 
 
-        Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
-        movementDirection.Normalize();
-        transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
+          Vector3 movementDirection = new Vector3(horizontalInput, 0, verticalInput);
+          movementDirection.Normalize();
+          transform.Translate(movementDirection * speed * Time.deltaTime, Space.World);
 
 
-        // Making the player be able to jump
+          // Making the player be able to jump
 
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
+          if (Input.GetKeyDown(KeyCode.Space))
+          {
 
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+              rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
 
-        }
-
- 
-        var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        rb.velocity = dir * speed;
-
-        if (Input.GetMouseButton(1))
-        {
-            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-            
-
-            if (movementDirection != Vector3.zero)
-            {
-                Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
-
-            }
-            turn.x += Input.GetAxis("Mouse X");
-            turn.y += Input.GetAxis("Mouse Y");
-            transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+          }
 
 
-        }
-        else
-        {
-            UnityEngine.Cursor.lockState = CursorLockMode.None;
-        }
+          var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+          rb.velocity = dir * speed;
 
-    }
-    
+          if (Input.GetMouseButton(1))
+          {
+              UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+
+              if (movementDirection != Vector3.zero)
+              {
+                  Quaternion toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+                  transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+
+              }
+              turn.x += Input.GetAxis("Mouse X");
+              turn.y += Input.GetAxis("Mouse Y");
+              transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);
+
+
+          }
+          else
+          {
+              UnityEngine.Cursor.lockState = CursorLockMode.None;
+          }
+
+      }
 
 
 
 }
-
-
-
