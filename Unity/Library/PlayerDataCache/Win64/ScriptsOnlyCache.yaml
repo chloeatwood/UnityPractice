@@ -3,9 +3,11 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EatCube
     - MovementManager
+    - SuperCheese
     - TimeElapsed
     - Timer
     - UIManager
+    - WinCondition
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro:
@@ -100,6 +102,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 54
       Script: {instanceID: 0}
+    - Class: 64
+      Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
     - Class: 81
@@ -135,15 +139,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4344}
     - Class: 114
-      Script: {instanceID: 5048}
+      Script: {instanceID: 4804}
     - Class: 114
-      Script: {instanceID: 5374}
+      Script: {instanceID: 5050}
     - Class: 114
-      Script: {instanceID: 5596}
+      Script: {instanceID: 5376}
     - Class: 114
-      Script: {instanceID: 5748}
+      Script: {instanceID: 5598}
     - Class: 114
-      Script: {instanceID: 6064}
+      Script: {instanceID: 5750}
+    - Class: 114
+      Script: {instanceID: 6066}
+    - Class: 114
+      Script: {instanceID: 27716}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -153,6 +161,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -639,7 +651,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: c18da302108bbfd569852bdb84209326
+      Hash: 48a6e3947a9c7d0c97a95852a7c9d158
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MovementManager
@@ -733,6 +745,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnEndDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: e7049f0bd036b6e4b480f4316c79c2ad
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WinCondition
   - hash:
       serializedVersion: 2
       Hash: db9b308769d19e1f9e161df0392c23ca
@@ -1219,7 +1237,13 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnSliderValueChangedMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: b13f3a0efed6f084be7b0a2969271989
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SuperCheese
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/catwo/Unity/Builds/05_16_24_2/Unity.exe
+  playerPath: C:/Users/catwo/Unity/Builds/05_16_24_4/Unity.exe

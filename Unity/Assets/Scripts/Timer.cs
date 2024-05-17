@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class Timer : MonoBehaviour
     {
         currentTime = startTime;
         timerText.text = currentTime.ToString("f2");
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -61,9 +63,15 @@ public class Timer : MonoBehaviour
                 currentTime = 0;
                 if (timeRemaining.gameObject.activeSelf)
                 {
+                    //Showing player lost
                     gameOver.gameObject.SetActive(true);
+
+                    //freezing time so player cannot move
+                    Time.timeScale = 0;
+
+                    //Allwing the mouse to move
                     UnityEngine.Cursor.lockState = CursorLockMode.None;
-                    //Find way to freeze game movement
+                    
 
                 }
                 

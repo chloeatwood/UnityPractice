@@ -190,10 +190,12 @@ public class MovementManager : MonoBehaviour
     [SerializeField] private float RunSpeed;
     [SerializeField] private float Sensitivity;
     [SerializeField] private float JumpForce;
+    [SerializeField] private float superJump;
     [SerializeField] Button StartGame;
     [SerializeField] Button Exit;
     [SerializeField] Button Reset;
     [SerializeField] private bool grounded = false;
+    [SerializeField] private GameObject superCheese;
 
 
 
@@ -247,15 +249,22 @@ public class MovementManager : MonoBehaviour
          }
         
 
-        //jumping
+        //Jumping
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
-            
-            PlayerBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            if (superCheese.activeSelf) 
+            { 
+                PlayerBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+            }
+            else
+            {
+                PlayerBody.AddForce(Vector3.up * superJump, ForceMode.Impulse);
+            }
 
         }
 
     }
+
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -270,10 +279,12 @@ public class MovementManager : MonoBehaviour
     //Rotation function
     private void MovePlayerCamera()
     {
-        xRot -= PlayerMouse.y * Sensitivity;
+        if (Time.timeScale == 1) { 
+            xRot -= PlayerMouse.y * Sensitivity;
 
-        transform.Rotate(0f, PlayerMouse.x * Sensitivity, 0f);
-        PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+            transform.Rotate(0f, PlayerMouse.x * Sensitivity, 0f);
+            PlayerCamera.transform.localRotation = Quaternion.Euler(xRot, 0f, 0f);
+        }
     }
 
 }
