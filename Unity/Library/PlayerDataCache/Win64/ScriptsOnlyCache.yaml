@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EatCube
     - MovementManager
+    - Music
     - Spin
     - SuperCheese
     - TimeElapsed
@@ -35,6 +36,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.RawImage
+    - UnityEngine.UI.Slider
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -66,11 +68,15 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.ColorBlock
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
+    - UnityEngine.UI.Slider/SliderEvent
     - UnityEngine.UI.SpriteState
   methodsToPreserve:
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
     methodName: timerMode
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: setVolume
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
     methodName: backToMain
@@ -86,6 +92,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
     methodName: exitGame
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: openSettings
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
     methodName: resetGame
@@ -122,6 +131,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -141,35 +154,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3098}
     - Class: 114
-      Script: {instanceID: 3128}
+      Script: {instanceID: 3338}
     - Class: 114
-      Script: {instanceID: 3340}
+      Script: {instanceID: 3570}
     - Class: 114
-      Script: {instanceID: 3572}
+      Script: {instanceID: 3980}
     - Class: 114
-      Script: {instanceID: 3982}
+      Script: {instanceID: 4088}
     - Class: 114
-      Script: {instanceID: 4090}
+      Script: {instanceID: 4246}
     - Class: 114
-      Script: {instanceID: 4248}
+      Script: {instanceID: 4342}
     - Class: 114
-      Script: {instanceID: 4344}
+      Script: {instanceID: 4974}
     - Class: 114
-      Script: {instanceID: 4804}
+      Script: {instanceID: 5046}
     - Class: 114
-      Script: {instanceID: 5050}
+      Script: {instanceID: 5592}
     - Class: 114
-      Script: {instanceID: 5376}
+      Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 5598}
+      Script: {instanceID: 6060}
     - Class: 114
-      Script: {instanceID: 5750}
+      Script: {instanceID: 7878}
     - Class: 114
-      Script: {instanceID: 6066}
+      Script: {instanceID: 7882}
     - Class: 114
-      Script: {instanceID: 7534}
+      Script: {instanceID: 7886}
     - Class: 114
-      Script: {instanceID: 73346}
+      Script: {instanceID: 7890}
+    - Class: 114
+      Script: {instanceID: 7894}
+    - Class: 114
+      Script: {instanceID: 29388}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -191,6 +208,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -447,12 +470,6 @@ ScriptsOnlyBuild:
     className: Benchmark04
   - hash:
       serializedVersion: 2
-      Hash: 495fe598a95d1b05d4c42a77182691b7
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: TimeElapsed
-  - hash:
-      serializedVersion: 2
       Hash: d90629714fa6b0145fcaffc87f5c6559
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -495,7 +512,7 @@ ScriptsOnlyBuild:
     className: ScriptMachine
   - hash:
       serializedVersion: 2
-      Hash: 6d4fe5de2af8d8de3f58680d1c9070a2
+      Hash: 5cf460c9b0ebb5747511b5d86cf1def6
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIManager
@@ -765,12 +782,6 @@ ScriptsOnlyBuild:
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b3c71391c3632ab0d08167d422b5b1e5
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: WinCondition
-  - hash:
-      serializedVersion: 2
       Hash: db9b308769d19e1f9e161df0392c23ca
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
@@ -889,12 +900,6 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: Text
-  - hash:
-      serializedVersion: 2
-      Hash: 1ad56e98e07920a8e2ad3fd2c64f995d
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: Timer
   - hash:
       serializedVersion: 2
       Hash: 1ce63d97d1ca25cba2d91d5f32fd5f79
@@ -1209,12 +1214,6 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
-      Hash: b13f3a0efed6f084be7b0a2969271989
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: SuperCheese
-  - hash:
-      serializedVersion: 2
       Hash: 9fb1c3ab48b256d508ecddd967f98652
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1263,11 +1262,41 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
+      Hash: b13f3a0efed6f084be7b0a2969271989
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SuperCheese
+  - hash:
+      serializedVersion: 2
       Hash: a763e1070f351b8b8bd4d494473aac35
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Spin
+  - hash:
+      serializedVersion: 2
+      Hash: b3c71391c3632ab0d08167d422b5b1e5
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: WinCondition
+  - hash:
+      serializedVersion: 2
+      Hash: 1ad56e98e07920a8e2ad3fd2c64f995d
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Timer
+  - hash:
+      serializedVersion: 2
+      Hash: 495fe598a95d1b05d4c42a77182691b7
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: TimeElapsed
+  - hash:
+      serializedVersion: 2
+      Hash: ba34587a20021072ece2989d0a878afb
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Music
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/catwo/Unity/Builds/05_17_24_6/Unity.exe
+  playerPath: C:/Users/catwo/Unity/Builds/05_20_24_1/Unity.exe

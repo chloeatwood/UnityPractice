@@ -4,15 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Audio;
 
 
 
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] Button startTimerMode, startExploreMode, Exit, InstructionsButton, BackButtonMainMenu, NextPage, BackPage;
-    [SerializeField] TMP_Text timerText, timerCount, timeElapsed, timeCount, Instructions, Hints;
-    [SerializeField] GameObject Background;
+    [SerializeField] Button startTimerMode, startExploreMode, Exit, InstructionsButton, BackButtonMainMenu, NextPage, BackPage, Settings;
+    [SerializeField] TMP_Text timerText, timerCount, timeElapsed, timeCount, Instructions, Hints, LevelText;
+    [SerializeField] GameObject Background, SettingsCannvas;
+    [SerializeField] AudioMixer audioMixer;
+    [SerializeField] Slider LevelSlider;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +27,18 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (LevelSlider.value == 1)
+        {
+            LevelText.text = "Easy";
+        }
+        else if (LevelSlider.value == 2)
+        {
+            LevelText.text = "Medium";
+        }
+        else if (LevelSlider.value == 3)
+        {
+            LevelText.text = "Hard";
+        }
     }
 
     //Function to reset the game round
@@ -48,6 +63,7 @@ public class UIManager : MonoBehaviour
         startExploreMode.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
         InstructionsButton.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
     }
 
     public void freeMode()
@@ -58,6 +74,7 @@ public class UIManager : MonoBehaviour
         startExploreMode.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
         InstructionsButton.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
     }
 
     public void showingInstructions()
@@ -79,6 +96,8 @@ public class UIManager : MonoBehaviour
         NextPage.gameObject.SetActive(false);
         Hints.gameObject.SetActive(false);
         BackPage.gameObject.SetActive(false);
+        SettingsCannvas.SetActive(false);
+        Settings.gameObject.SetActive(true);
     }
 
     public void secondPageInfo()
@@ -101,5 +120,17 @@ public class UIManager : MonoBehaviour
         Instructions.gameObject.SetActive(true);
     }
 
+    public void openSettings()
+    {
+        InstructionsButton.gameObject.SetActive(false);
+        BackButtonMainMenu.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(false);
+        Background.SetActive(true);
+        SettingsCannvas.SetActive(true);
+    }
 
+    public void setVolume(float volume)
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
 }

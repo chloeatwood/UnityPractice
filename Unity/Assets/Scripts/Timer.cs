@@ -23,8 +23,6 @@ public class Timer : MonoBehaviour
 
     [SerializeField] TMP_Text timeRemaining;
 
-    //[SerializeField] Button Exit, Restart;
-
 
     // Start is called before the first frame update
     void Start()
