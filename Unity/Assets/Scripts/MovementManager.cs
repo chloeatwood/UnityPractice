@@ -194,8 +194,12 @@ public class MovementManager : MonoBehaviour
     [SerializeField] Button StartGame;
     [SerializeField] Button Exit;
     [SerializeField] Button Reset;
+    [SerializeField] Button GameInfo;
     [SerializeField] private bool grounded = false;
     [SerializeField] private GameObject superCheese;
+    private bool GameIsPaused = false;
+    [SerializeField] private GameObject otherSuperCheese;
+
 
 
 
@@ -218,17 +222,27 @@ public class MovementManager : MonoBehaviour
 
             else
             {
-                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
-                Exit.gameObject.SetActive(true);
-                Reset.gameObject.SetActive(true);
-                MovePlayer();
-                MovePlayerCamera();
-
-                if (Input.GetKey(KeyCode.Tab))
+                if (GameIsPaused == false && Input.GetKeyDown(KeyCode.Tab))
                 {
-                    UnityEngine.Cursor.lockState = CursorLockMode.None;
+                    PauseGame();
                 }
-            }
+
+                else if (GameIsPaused == false) 
+                {
+                    UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+                    Exit.gameObject.SetActive(true);
+                    Reset.gameObject.SetActive(true);
+                    MovePlayer();
+                    MovePlayerCamera();
+                }
+                else if (GameIsPaused && Input.GetKeyDown(KeyCode.Tab))
+                {
+                ResumeGame();
+                }
+            
+
+
+        }
     }
 
     //Move player function
@@ -260,6 +274,13 @@ public class MovementManager : MonoBehaviour
             {
                 PlayerBody.AddForce(Vector3.up * superJump, ForceMode.Impulse);
             }
+            if (!otherSuperCheese.activeSelf)
+            {
+                PlayerBody.AddForce(Vector3.up * superJump, ForceMode.Impulse);
+            }
+            {
+
+            }
 
         }
 
@@ -287,4 +308,25 @@ public class MovementManager : MonoBehaviour
         }
     }
 
+
+    void ResumeGame()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        GameIsPaused = false;
+        Cursor.visible = false;
+        GameInfo.gameObject.SetActive(false);
+    }
+
+    void PauseGame()
+    {
+
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0;
+        GameIsPaused = true;
+        GameInfo.gameObject.SetActive(true);
+
+
+    }
 }

@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    //start time value
-    [SerializeField] float startTime;
 
     //Current time
     float currentTime;
@@ -31,9 +29,9 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentTime = startTime;
+        currentTime = 60f;
         timerText.text = currentTime.ToString("f2");
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame

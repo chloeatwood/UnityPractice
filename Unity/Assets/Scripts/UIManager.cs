@@ -10,8 +10,10 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] Button startTimerMode, startExploreMode, Exit;
-    [SerializeField] TMP_Text timerText, timerCount, timeElapsed, timeCount;
+    [SerializeField] Button startTimerMode, startExploreMode, Exit, InstructionsButton, BackButtonMainMenu, NextPage, BackPage;
+    [SerializeField] TMP_Text timerText, timerCount, timeElapsed, timeCount, Instructions, Hints;
+    [SerializeField] GameObject Background;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,6 @@ public class UIManager : MonoBehaviour
 
     }
 
-
     //Function to quit out of the application
     public void exitGame()
     {
@@ -46,6 +47,7 @@ public class UIManager : MonoBehaviour
         startTimerMode.gameObject.SetActive(false);
         startExploreMode.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
+        InstructionsButton.gameObject.SetActive(false);
     }
 
     public void freeMode()
@@ -55,9 +57,49 @@ public class UIManager : MonoBehaviour
         startTimerMode.gameObject.SetActive(false);
         startExploreMode.gameObject.SetActive(false);
         Exit.gameObject.SetActive(false);
+        InstructionsButton.gameObject.SetActive(false);
     }
 
+    public void showingInstructions()
+    {
+        InstructionsButton.gameObject.SetActive(false);
+        BackButtonMainMenu.gameObject.SetActive(true);
+        Instructions.gameObject.SetActive(true);
+        Background.SetActive(true );
+        NextPage.gameObject.SetActive(true);
 
+    }
+
+    public void backToMain()
+    {
+        InstructionsButton.gameObject.SetActive(true);
+        BackButtonMainMenu.gameObject.SetActive(false);
+        Instructions.gameObject.SetActive(false);
+        Background.SetActive(false);
+        NextPage.gameObject.SetActive(false);
+        Hints.gameObject.SetActive(false);
+        BackPage.gameObject.SetActive(false);
+    }
+
+    public void secondPageInfo()
+    {
+        BackButtonMainMenu.gameObject.SetActive(true);
+        Background.SetActive(true);
+        NextPage.gameObject.SetActive(false);
+        BackPage.gameObject.SetActive(true);
+        Hints.gameObject.SetActive(true);
+        Instructions.gameObject.SetActive(false);
+    }
+
+    public void backAPage()
+    {
+        BackButtonMainMenu.gameObject.SetActive(true);
+        Background.SetActive(true);
+        NextPage.gameObject.SetActive(true);
+        BackPage.gameObject.SetActive(false);
+        Hints.gameObject.SetActive(false);
+        Instructions.gameObject.SetActive(true);
+    }
 
 
 }

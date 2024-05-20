@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EatCube
     - MovementManager
+    - Spin
     - SuperCheese
     - TimeElapsed
     - Timer
@@ -33,6 +34,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
   serializedClasses:
     Unity.TextMeshPro:
     - TMPro.FaceInfo_Legacy
@@ -71,6 +73,15 @@ ScriptsOnlyBuild:
     methodName: timerMode
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
+    methodName: backToMain
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: secondPageInfo
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: showingInstructions
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
     methodName: freeMode
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
@@ -78,6 +89,9 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: UIManager
     methodName: resetGame
+  - assembly: Assembly-CSharp
+    fullTypeName: UIManager
+    methodName: backAPage
   sceneClasses:
     Assets/Scenes/SampleScene.unity:
     - Class: 1
@@ -119,6 +133,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2184}
     - Class: 114
+      Script: {instanceID: 2310}
+    - Class: 114
       Script: {instanceID: 2604}
     - Class: 114
       Script: {instanceID: 2808}
@@ -151,7 +167,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6066}
     - Class: 114
-      Script: {instanceID: 27716}
+      Script: {instanceID: 7534}
+    - Class: 114
+      Script: {instanceID: 73346}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -477,7 +495,7 @@ ScriptsOnlyBuild:
     className: ScriptMachine
   - hash:
       serializedVersion: 2
-      Hash: a57dc17bab1bed3ba220516966c4161e
+      Hash: 6d4fe5de2af8d8de3f58680d1c9070a2
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: UIManager
@@ -651,7 +669,7 @@ ScriptsOnlyBuild:
     className: DictionaryAsset
   - hash:
       serializedVersion: 2
-      Hash: 48a6e3947a9c7d0c97a95852a7c9d158
+      Hash: f74421a6208cda479a81e340ba06a463
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: MovementManager
@@ -747,7 +765,7 @@ ScriptsOnlyBuild:
     className: UnityOnEndDragMessageListener
   - hash:
       serializedVersion: 2
-      Hash: e7049f0bd036b6e4b480f4316c79c2ad
+      Hash: b3c71391c3632ab0d08167d422b5b1e5
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: WinCondition
@@ -873,7 +891,7 @@ ScriptsOnlyBuild:
     className: Text
   - hash:
       serializedVersion: 2
-      Hash: 70e2f4fabac11a9826843c876ee072da
+      Hash: 1ad56e98e07920a8e2ad3fd2c64f995d
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: Timer
@@ -1191,6 +1209,12 @@ ScriptsOnlyBuild:
     className: TeleType
   - hash:
       serializedVersion: 2
+      Hash: b13f3a0efed6f084be7b0a2969271989
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SuperCheese
+  - hash:
+      serializedVersion: 2
       Hash: 9fb1c3ab48b256d508ecddd967f98652
     assemblyName: Assembly-CSharp
     namespaceName: TMPro.Examples
@@ -1239,11 +1263,11 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: b13f3a0efed6f084be7b0a2969271989
+      Hash: a763e1070f351b8b8bd4d494473aac35
     assemblyName: Assembly-CSharp
     namespaceName: 
-    className: SuperCheese
+    className: Spin
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/catwo/Unity/Builds/05_16_24_4/Unity.exe
+  playerPath: C:/Users/catwo/Unity/Builds/05_17_24_6/Unity.exe
