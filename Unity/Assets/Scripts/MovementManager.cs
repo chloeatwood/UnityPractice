@@ -194,7 +194,7 @@ public class MovementManager : MonoBehaviour
     [SerializeField] Button StartGame;
     [SerializeField] Button Exit;
     [SerializeField] Button Reset;
-    [SerializeField] Button GameInfo;
+    [SerializeField] Button GameInfo, Settings;
     [SerializeField] private bool grounded = false;
     [SerializeField] private GameObject superCheese;
     private bool GameIsPaused = false;
@@ -316,6 +316,8 @@ public class MovementManager : MonoBehaviour
         GameIsPaused = false;
         Cursor.visible = false;
         GameInfo.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
+        
     }
 
     void PauseGame()
@@ -326,6 +328,7 @@ public class MovementManager : MonoBehaviour
         Time.timeScale = 0;
         GameIsPaused = true;
         GameInfo.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(true);
 
 
     }

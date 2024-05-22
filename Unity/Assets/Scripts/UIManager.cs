@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] TMP_Text timerText, timerCount, timeElapsed, timeCount, Instructions, Hints, LevelText;
     [SerializeField] GameObject Background, SettingsCannvas;
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] Slider LevelSlider;
 
 
     // Start is called before the first frame update
@@ -27,18 +26,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (LevelSlider.value == 1)
-        {
-            LevelText.text = "Easy";
-        }
-        else if (LevelSlider.value == 2)
-        {
-            LevelText.text = "Medium";
-        }
-        else if (LevelSlider.value == 3)
-        {
-            LevelText.text = "Hard";
-        }
+
     }
 
     //Function to reset the game round
@@ -84,6 +72,8 @@ public class UIManager : MonoBehaviour
         Instructions.gameObject.SetActive(true);
         Background.SetActive(true );
         NextPage.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(false);
+
 
     }
 
@@ -108,6 +98,7 @@ public class UIManager : MonoBehaviour
         BackPage.gameObject.SetActive(true);
         Hints.gameObject.SetActive(true);
         Instructions.gameObject.SetActive(false);
+        Settings.gameObject.SetActive(false);
     }
 
     public void backAPage()
@@ -118,6 +109,8 @@ public class UIManager : MonoBehaviour
         BackPage.gameObject.SetActive(false);
         Hints.gameObject.SetActive(false);
         Instructions.gameObject.SetActive(true);
+        Settings.gameObject.SetActive(false);
+
     }
 
     public void openSettings()
